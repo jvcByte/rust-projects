@@ -1,8 +1,10 @@
+#[derive(Debug)]
 struct Point {
     x: u64,
     y: u64,
 }
 
+#[derive(Debug)]
 enum Message {
     Resize { width: u64, height: u64 },
     Move(Point),
@@ -11,6 +13,7 @@ enum Message {
     Quit,
 }
 
+#[derive(Debug)]
 struct State {
     width: u64,
     height: u64,
@@ -19,6 +22,12 @@ struct State {
     // RGB color composed of red, green and blue.
     color: (u8, u8, u8),
     quit: bool,
+}
+
+impl Message {
+    fn call(&self) {
+        println!("{self:?}");
+    }
 }
 
 impl State {
@@ -46,11 +55,32 @@ impl State {
     fn process(&mut self, message: Message) {
         // TODO: Create a match expression to process the different message
         // variants using the methods defined above.
+        match message {
+            Message::Resize { width, height } => self.resize(width, height),
+            Message::Move(point) => self.move_position(point),
+            Message::Echo(s) => self.echo(s),
+            Message::ChangeColor(red, green, blue) => self.change_color(red, green, blue),
+            Message::Quit => self.quit(),
+        }
     }
 }
 
 fn main() {
     // You can optionally experiment here.
+    let messages = [
+        Message::Resize {
+            width: 10,
+            height: 10,
+        },
+        Message::Move(Point { x: 20, y: 20 }),
+        Message::Echo(String::from("Hello World")),
+        Message::ChangeColor(255, 200, 200),
+        Message::Quit,
+    ];
+
+    for message in &messages {
+        message.call()
+    }
 }
 
 #[cfg(test)]
