@@ -1,8 +1,8 @@
 mod api;
-mod deps;
+mod repo;
 use actix_web::{App, HttpServer, middleware::Logger, web::Data};
 use api::task::get_task;
-use deps::ddb::DDBRepository;
+use repo::ddb::DDBRepository;
 
 #[actix_web::main]
 async fn main() -> Result<()> {
