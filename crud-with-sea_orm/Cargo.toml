@@ -1,0 +1,52 @@
+[package]
+name = "crud-with-sea_orm"
+version = "0.1.0"
+edition = "2024"
+description = "A small Actix Web + SeaORM CRUD example using Postgres"
+license = "MIT OR Apache-2.0"
+repository = ""
+authors = ["Your Name <you@example.com>"]
+
+[dependencies]
+# Web framework
+actix-web = "4"
+
+# SeaORM (ORM). We enable SQLx Postgres integration, tokio runtime with rustls TLS,
+# the derive macros, and debug-print for easier debugging while developing.
+sea-orm = { version = "2.0.0-rc.28", features = [ "sqlx-postgres", "runtime-tokio-rustls", "macros", "debug-print" ] }
+
+# Convenience serde for request/response (derive macros enabled)
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+
+# Async runtime (SeaORM uses Tokio runtime)
+tokio = { version = "1", features = ["rt-multi-thread", "macros", "time"] }
+
+# Optional: SQLx is pulled via sea-orm features, but include for compile-time features if you use it directly
+sqlx = { version = "0.8", features = ["postgres", "runtime-tokio-rustls", "macros"], optional = true }
+
+# Configuration from environment / .env
+dotenvy = "0.15"
+# Logging
+env_logger = "0.10"
+log = "0.4"
+
+# Error ergonomics
+thiserror = "1.0"
+
+# Useful utilities
+uuid = { version = "1", features = ["v4"] }
+chrono = { version = "0.4", optional = true }
+
+# Dev & test helpers
+[dev-dependencies]
+actix-rt = "2"
+tokio-test = "0.4"
+
+# Features to let consumers enable optional crates in a tidy way.
+[features]
+default = []
+# Expose sqlx for direct usage if needed
+with-sqlx = ["sqlx"]
+
+# Optional: binaries, examples, and more can be added later.

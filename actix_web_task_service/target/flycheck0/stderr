@@ -1,10 +1,95 @@
     Blocking waiting for file lock on package cache
-    Updating crates.io index
-error: failed to select a version for `sea-orm`.
-    ... required by package `actix_web_task_service v0.1.0 (/home/jvcbyte/Sofwares/rust-projects/actix_web_task_service)`
-versions that meet the requirements `^2.0.0-rc` are: 2.0.0-rc.28, 2.0.0-rc.27, 2.0.0-rc.26, 2.0.0-rc.25, 2.0.0-rc.24, 2.0.0-rc.23, 2.0.0-rc.22, 2.0.0-rc.21, 2.0.0-rc.20, 2.0.0-rc.19, 2.0.0-rc.18, 2.0.0-rc.17, 2.0.0-rc.16, 2.0.0-rc.15, 2.0.0-rc.14, 2.0.0-rc.13, 2.0.0-rc.12, 2.0.0-rc.11, 2.0.0-rc.10, 2.0.0-rc.9, 2.0.0-rc.8, 2.0.0-rc.7, 2.0.0-rc.6, 2.0.0-rc.5, 2.0.0-rc.4, 2.0.0-rc.3, 2.0.0-rc.1
+   0.297622226s  INFO prepare_target{force=false package_id=actix_web_task_service v0.1.0 (/home/jvcbyte/Sofwares/rust-projects/actix_web_task_service) target="actix_web_task_service"}: cargo::core::compiler::fingerprint: fingerprint error for actix_web_task_service v0.1.0 (/home/jvcbyte/Sofwares/rust-projects/actix_web_task_service)/Check { test: false }/TargetInner { name: "actix_web_task_service", doc: true, ..: with_path("/home/jvcbyte/Sofwares/rust-projects/actix_web_task_service/src/main.rs", Edition2024) }
+   0.297663768s  INFO prepare_target{force=false package_id=actix_web_task_service v0.1.0 (/home/jvcbyte/Sofwares/rust-projects/actix_web_task_service) target="actix_web_task_service"}: cargo::core::compiler::fingerprint:     err: failed to read `/home/jvcbyte/Sofwares/rust-projects/actix_web_task_service/target/debug/.fingerprint/actix_web_task_service-8bc665a82a3f24d9/bin-actix_web_task_service`
 
-package `actix_web_task_service` depends on `sea-orm` with feature `rustls` but `sea-orm` does not have that feature.
+Caused by:
+    No such file or directory (os error 2)
 
+Stack backtrace:
+   0: cargo_util::paths::read_bytes
+   1: cargo_util::paths::read
+   2: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   3: cargo::core::compiler::fingerprint::prepare_target
+   4: cargo::core::compiler::compile
+   5: <cargo::core::compiler::build_runner::BuildRunner>::compile
+   6: cargo::ops::cargo_compile::compile_ws
+   7: cargo::ops::cargo_compile::compile_with_exec
+   8: cargo::ops::cargo_compile::compile
+   9: cargo::commands::check::exec
+  10: <cargo::cli::Exec>::exec
+  11: cargo::main
+  12: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  13: std::rt::lang_start::<()>::{closure#0}
+  14: core::ops::function::impls::<impl core::ops::function::FnOnce<A> for &F>::call_once
+             at /rustc/ed61e7d7e242494fb7057f2657300d9e77bb4fcb/library/core/src/ops/function.rs:287:21
+  15: std::panicking::catch_unwind::do_call
+             at /rustc/ed61e7d7e242494fb7057f2657300d9e77bb4fcb/library/std/src/panicking.rs:590:40
+  16: std::panicking::catch_unwind
+             at /rustc/ed61e7d7e242494fb7057f2657300d9e77bb4fcb/library/std/src/panicking.rs:553:19
+  17: std::panic::catch_unwind
+             at /rustc/ed61e7d7e242494fb7057f2657300d9e77bb4fcb/library/std/src/panic.rs:359:14
+  18: std::rt::lang_start_internal::{{closure}}
+             at /rustc/ed61e7d7e242494fb7057f2657300d9e77bb4fcb/library/std/src/rt.rs:175:24
+  19: std::panicking::catch_unwind::do_call
+             at /rustc/ed61e7d7e242494fb7057f2657300d9e77bb4fcb/library/std/src/panicking.rs:590:40
+  20: std::panicking::catch_unwind
+             at /rustc/ed61e7d7e242494fb7057f2657300d9e77bb4fcb/library/std/src/panicking.rs:553:19
+  21: std::panic::catch_unwind
+             at /rustc/ed61e7d7e242494fb7057f2657300d9e77bb4fcb/library/std/src/panic.rs:359:14
+  22: std::rt::lang_start_internal
+             at /rustc/ed61e7d7e242494fb7057f2657300d9e77bb4fcb/library/std/src/rt.rs:171:5
+  23: main
+  24: __libc_start_call_main
+             at ./csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+  25: __libc_start_main_impl
+             at ./csu/../csu/libc-start.c:360:3
+  26: <unknown>
+   0.425668286s  INFO prepare_target{force=false package_id=actix_web_task_service v0.1.0 (/home/jvcbyte/Sofwares/rust-projects/actix_web_task_service) target="actix_web_task_service"}: cargo::core::compiler::fingerprint: fingerprint error for actix_web_task_service v0.1.0 (/home/jvcbyte/Sofwares/rust-projects/actix_web_task_service)/Check { test: true }/TargetInner { name: "actix_web_task_service", doc: true, ..: with_path("/home/jvcbyte/Sofwares/rust-projects/actix_web_task_service/src/main.rs", Edition2024) }
+   0.425700393s  INFO prepare_target{force=false package_id=actix_web_task_service v0.1.0 (/home/jvcbyte/Sofwares/rust-projects/actix_web_task_service) target="actix_web_task_service"}: cargo::core::compiler::fingerprint:     err: failed to read `/home/jvcbyte/Sofwares/rust-projects/actix_web_task_service/target/debug/.fingerprint/actix_web_task_service-79336776ae78011a/test-bin-actix_web_task_service`
 
-failed to select a version for `sea-orm` which could resolve this conflict
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: cargo_util::paths::read_bytes
+   1: cargo_util::paths::read
+   2: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   3: cargo::core::compiler::fingerprint::prepare_target
+   4: cargo::core::compiler::compile
+   5: <cargo::core::compiler::build_runner::BuildRunner>::compile
+   6: cargo::ops::cargo_compile::compile_ws
+   7: cargo::ops::cargo_compile::compile_with_exec
+   8: cargo::ops::cargo_compile::compile
+   9: cargo::commands::check::exec
+  10: <cargo::cli::Exec>::exec
+  11: cargo::main
+  12: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  13: std::rt::lang_start::<()>::{closure#0}
+  14: core::ops::function::impls::<impl core::ops::function::FnOnce<A> for &F>::call_once
+             at /rustc/ed61e7d7e242494fb7057f2657300d9e77bb4fcb/library/core/src/ops/function.rs:287:21
+  15: std::panicking::catch_unwind::do_call
+             at /rustc/ed61e7d7e242494fb7057f2657300d9e77bb4fcb/library/std/src/panicking.rs:590:40
+  16: std::panicking::catch_unwind
+             at /rustc/ed61e7d7e242494fb7057f2657300d9e77bb4fcb/library/std/src/panicking.rs:553:19
+  17: std::panic::catch_unwind
+             at /rustc/ed61e7d7e242494fb7057f2657300d9e77bb4fcb/library/std/src/panic.rs:359:14
+  18: std::rt::lang_start_internal::{{closure}}
+             at /rustc/ed61e7d7e242494fb7057f2657300d9e77bb4fcb/library/std/src/rt.rs:175:24
+  19: std::panicking::catch_unwind::do_call
+             at /rustc/ed61e7d7e242494fb7057f2657300d9e77bb4fcb/library/std/src/panicking.rs:590:40
+  20: std::panicking::catch_unwind
+             at /rustc/ed61e7d7e242494fb7057f2657300d9e77bb4fcb/library/std/src/panicking.rs:553:19
+  21: std::panic::catch_unwind
+             at /rustc/ed61e7d7e242494fb7057f2657300d9e77bb4fcb/library/std/src/panic.rs:359:14
+  22: std::rt::lang_start_internal
+             at /rustc/ed61e7d7e242494fb7057f2657300d9e77bb4fcb/library/std/src/rt.rs:171:5
+  23: main
+  24: __libc_start_call_main
+             at ./csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+  25: __libc_start_main_impl
+             at ./csu/../csu/libc-start.c:360:3
+  26: <unknown>
+    Checking actix_web_task_service v0.1.0 (/home/jvcbyte/Sofwares/rust-projects/actix_web_task_service)
+error: could not compile `actix_web_task_service` (bin "actix_web_task_service") due to 10 previous errors; 5 warnings emitted
+warning: build failed, waiting for other jobs to finish...
+error: could not compile `actix_web_task_service` (bin "actix_web_task_service" test) due to 10 previous errors; 5 warnings emitted

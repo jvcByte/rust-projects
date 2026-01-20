@@ -7,7 +7,7 @@ edition = "2024"
 actix-web = "^4"
 uuid = {version = "^0.8", features = ["v4"]}
 serde = {version = "^1", features = ["derive"]}
-sea-orm = { version = "2.0.0-rc", features = [ "sqlx-postgres", "rustls", "macros", "debug-print" ] }
+sea-orm = { version = "2.0.0-rc.28", features = [ "sqlx-postgres", "runtime-tokio-rustls", "macros", "debug-print" ] }
 env_logger = "0.8"
 log = "^0.4"
 strum_macros ="^0.24"
