@@ -1,13 +1,13 @@
-use actix_web::{App, HttpResponse, HttpServer, Responder, middleware::Logger, web};
-use dotenvy::dotenv;
-use env_logger::Env;
-use log::{error, info};
-use std::env;
-
 mod api;
 mod shared;
 
 use crate::shared::{AppState, config::postgres};
+use actix_web::{App, HttpResponse, HttpServer, Responder, middleware::Logger, web};
+use dotenvy::dotenv;
+use env_logger::Env;
+use log::{error, info};
+use migration::{MigratorTraits, migrator};
+use std::env;
 
 /// Simple health-check endpoint so you can verify the server is running.
 async fn health() -> impl Responder {
@@ -31,6 +31,7 @@ async fn main() -> std::io::Result<()> {
             std::process::exit(1);
         }
     };
+    Migrator::up(&db, None).await?;
 
     // Build application state and start server.
     let state = web::Data::new(AppState::new(db));

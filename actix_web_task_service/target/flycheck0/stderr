@@ -1,8 +1,9 @@
     Blocking waiting for file lock on package cache
     Blocking waiting for file lock on package cache
     Blocking waiting for file lock on package cache
-   0.328065064s  INFO prepare_target{force=false package_id=actix_web_task_service v0.1.0 (/home/jvcbyte/Sofwares/rust-projects/actix_web_task_service) target="actix_web_task_service"}: cargo::core::compiler::fingerprint: fingerprint error for actix_web_task_service v0.1.0 (/home/jvcbyte/Sofwares/rust-projects/actix_web_task_service)/Check { test: false }/TargetInner { name: "actix_web_task_service", doc: true, ..: with_path("/home/jvcbyte/Sofwares/rust-projects/actix_web_task_service/src/main.rs", Edition2024) }
-   0.328095592s  INFO prepare_target{force=false package_id=actix_web_task_service v0.1.0 (/home/jvcbyte/Sofwares/rust-projects/actix_web_task_service) target="actix_web_task_service"}: cargo::core::compiler::fingerprint:     err: failed to read `/home/jvcbyte/Sofwares/rust-projects/actix_web_task_service/target/debug/.fingerprint/actix_web_task_service-8bc665a82a3f24d9/bin-actix_web_task_service`
+    Blocking waiting for file lock on package cache
+   0.671911380s  INFO prepare_target{force=false package_id=actix_web_task_service v0.1.0 (/home/jvcbyte/Sofwares/rust-projects/actix_web_task_service) target="actix_web_task_service"}: cargo::core::compiler::fingerprint: fingerprint error for actix_web_task_service v0.1.0 (/home/jvcbyte/Sofwares/rust-projects/actix_web_task_service)/Check { test: false }/TargetInner { name: "actix_web_task_service", doc: true, ..: with_path("/home/jvcbyte/Sofwares/rust-projects/actix_web_task_service/src/main.rs", Edition2024) }
+   0.671949818s  INFO prepare_target{force=false package_id=actix_web_task_service v0.1.0 (/home/jvcbyte/Sofwares/rust-projects/actix_web_task_service) target="actix_web_task_service"}: cargo::core::compiler::fingerprint:     err: failed to read `/home/jvcbyte/Sofwares/rust-projects/actix_web_task_service/target/debug/.fingerprint/actix_web_task_service-8bc665a82a3f24d9/bin-actix_web_task_service`
 
 Caused by:
     No such file or directory (os error 2)
@@ -46,8 +47,8 @@ Stack backtrace:
   25: __libc_start_main_impl
              at ./csu/../csu/libc-start.c:360:3
   26: <unknown>
-   0.435075575s  INFO prepare_target{force=false package_id=actix_web_task_service v0.1.0 (/home/jvcbyte/Sofwares/rust-projects/actix_web_task_service) target="actix_web_task_service"}: cargo::core::compiler::fingerprint: fingerprint error for actix_web_task_service v0.1.0 (/home/jvcbyte/Sofwares/rust-projects/actix_web_task_service)/Check { test: true }/TargetInner { name: "actix_web_task_service", doc: true, ..: with_path("/home/jvcbyte/Sofwares/rust-projects/actix_web_task_service/src/main.rs", Edition2024) }
-   0.435093871s  INFO prepare_target{force=false package_id=actix_web_task_service v0.1.0 (/home/jvcbyte/Sofwares/rust-projects/actix_web_task_service) target="actix_web_task_service"}: cargo::core::compiler::fingerprint:     err: failed to read `/home/jvcbyte/Sofwares/rust-projects/actix_web_task_service/target/debug/.fingerprint/actix_web_task_service-79336776ae78011a/test-bin-actix_web_task_service`
+   0.820620642s  INFO prepare_target{force=false package_id=actix_web_task_service v0.1.0 (/home/jvcbyte/Sofwares/rust-projects/actix_web_task_service) target="actix_web_task_service"}: cargo::core::compiler::fingerprint: fingerprint error for actix_web_task_service v0.1.0 (/home/jvcbyte/Sofwares/rust-projects/actix_web_task_service)/Check { test: true }/TargetInner { name: "actix_web_task_service", doc: true, ..: with_path("/home/jvcbyte/Sofwares/rust-projects/actix_web_task_service/src/main.rs", Edition2024) }
+   0.820646792s  INFO prepare_target{force=false package_id=actix_web_task_service v0.1.0 (/home/jvcbyte/Sofwares/rust-projects/actix_web_task_service) target="actix_web_task_service"}: cargo::core::compiler::fingerprint:     err: failed to read `/home/jvcbyte/Sofwares/rust-projects/actix_web_task_service/target/debug/.fingerprint/actix_web_task_service-79336776ae78011a/test-bin-actix_web_task_service`
 
 Caused by:
     No such file or directory (os error 2)

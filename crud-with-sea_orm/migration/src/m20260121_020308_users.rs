@@ -6,28 +6,22 @@ pub struct Migration;
 #[async_trait::async_trait]
 impl MigrationTrait for Migration {
     async fn up(&self, manager: &SchemaManager) -> Result<(), DbErr> {
-        // Replace the sample below with your own migration scripts
-        todo!();
-
         manager
             .create_table(
                 Table::create()
-                    .table("post")
+                    .table("users")
                     .if_not_exists()
                     .col(pk_auto("id"))
-                    .col(string("title"))
-                    .col(string("text"))
+                    .col(string("name"))
+                    .col(string("email"))
                     .to_owned(),
             )
             .await
     }
 
     async fn down(&self, manager: &SchemaManager) -> Result<(), DbErr> {
-        // Replace the sample below with your own migration scripts
-        todo!();
-
         manager
-            .drop_table(Table::drop().table("post").to_owned())
+            .drop_table(Table::drop().table("users").to_owned())
             .await
     }
 }
